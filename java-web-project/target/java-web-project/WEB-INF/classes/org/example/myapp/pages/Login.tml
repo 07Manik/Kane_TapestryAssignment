@@ -1,0 +1,30 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+
+</head>
+<body class="container">
+<h3 style="margin-left: 17%;margin-bottom: 20px;">Welcome to Employee Login Page</h3>
+
+<t:form t:id="form" class="form-horizontal">
+            <div class="form-group">
+                <t:label for="username" class="col-sm-2"/>
+                <div class="col-sm-4">
+                    <t:textfield t:id="username"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="password" class="col-sm-2"/>
+                <div class="col-sm-4">
+                    <t:textfield t:id="password"/>
+                </div>
+            </div>
+            <div class="form-group" style="margin-left: 13%;">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <t:submit/>
+                </div>
+            </div>
+
+
+        </t:form>
+</body>
+</html>

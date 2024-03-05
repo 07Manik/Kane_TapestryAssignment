@@ -1,0 +1,334 @@
+EXCEPTION STACK:
+
+
+  Exception: org.apache.tapestry5.runtime.ComponentEventException
+    Message: Exception constructing service 'ValueEncoderSource': Error invoking service contribution method org.apache.tapestry5.hibernate.web.modules.HibernateModule.contributeValueEncoderSource(MappedConfiguration, boolean, HibernateSessionSource, Session, TypeCoercer, PropertyAccess, LoggerSource): Exception constructing service 'HibernateSessionSource': Error invoking constructor public org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(org.slf4j.Logger,java.util.List): Mapping (RESOURCE) not found : org.example.myapp.entities.Employee : origin(org.example.myapp.entities.Employee)
+    context: org.apache.tapestry5.internal.EmptyEventContext@6948e59d
+  eventType: action
+   location: classpath:org/example/myapp/pages/Login.tml, line 8
+
+  Exception: org.apache.tapestry5.runtime.ComponentEventException
+    Message: Exception constructing service 'ValueEncoderSource': Error invoking service contribution method org.apache.tapestry5.hibernate.web.modules.HibernateModule.contributeValueEncoderSource(MappedConfiguration, boolean, HibernateSessionSource, Session, TypeCoercer, PropertyAccess, LoggerSource): Exception constructing service 'HibernateSessionSource': Error invoking constructor public org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(org.slf4j.Logger,java.util.List): Mapping (RESOURCE) not found : org.example.myapp.entities.Employee : origin(org.example.myapp.entities.Employee)
+    context: org.apache.tapestry5.internal.EmptyEventContext@6948e59d
+  eventType: success
+   location: classpath:org/example/myapp/pages/Login.tml, line 8
+
+  Exception: java.lang.RuntimeException
+    Message: Exception constructing service 'ValueEncoderSource': Error invoking service contribution method org.apache.tapestry5.hibernate.web.modules.HibernateModule.contributeValueEncoderSource(MappedConfiguration, boolean, HibernateSessionSource, Session, TypeCoercer, PropertyAccess, LoggerSource): Exception constructing service 'HibernateSessionSource': Error invoking constructor public org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(org.slf4j.Logger,java.util.List): Mapping (RESOURCE) not found : org.example.myapp.entities.Employee : origin(org.example.myapp.entities.Employee)
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: Error invoking constructor public org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(org.slf4j.Logger,java.util.List): Mapping (RESOURCE) not found : org.example.myapp.entities.Employee : origin(org.example.myapp.entities.Employee)
+      trace: Handling traditional 'action' component event request for Login:form.
+             Triggering event 'action' on Login:form
+             Triggering event 'success' on Login:form
+             Constructing instance of page class org.example.myapp.pages.EmployeeDetails
+             Realizing service ValueEncoderSource
+             Instantiating service ValueEncoderSource implementation via org.apache.tapestry5.internal.services.ValueEncoderSourceImpl(Map) (at ValueEncoderSourceImpl.java:37) via org.apache.tapestry5.modules.TapestryModule.bind(ServiceBinder) (at TapestryModule.java:474)
+             Creating plan to instantiate org.apache.tapestry5.internal.services.ValueEncoderSourceImpl via public org.apache.tapestry5.internal.services.ValueEncoderSourceImpl(java.util.Map)
+             Determining injection value for parameter #1 (java.util.Map)
+             Collecting mapped configuration for service ValueEncoderSource
+             Invoking org.apache.tapestry5.hibernate.web.modules.HibernateModule.contributeValueEncoderSource(MappedConfiguration, boolean, HibernateSessionSource, Session, TypeCoercer, PropertyAccess, LoggerSource) (at HibernateModule.java:98)
+             Realizing service HibernateSessionSource
+             Instantiating service HibernateSessionSource implementation via org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(Logger, List) (at HibernateSessionSourceImpl.java:40) via org.apache.tapestry5.hibernate.modules.HibernateCoreModule.bind(ServiceBinder) (at HibernateCoreModule.java:43)
+             Invoking constructor org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(Logger, List) (at HibernateSessionSourceImpl.java:40) via org.apache.tapestry5.hibernate.modules.HibernateCoreModule.bind(ServiceBinder) (at HibernateCoreModule.java:43) (for service 'HibernateSessionSource')
+
+  Exception: java.lang.RuntimeException
+    Message: Error invoking constructor public org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl(org.slf4j.Logger,java.util.List): Mapping (RESOURCE) not found : org.example.myapp.entities.Employee : origin(org.example.myapp.entities.Employee)
+
+  Exception: org.hibernate.boot.MappingNotFoundException
+    Message: Mapping (RESOURCE) not found : org.example.myapp.entities.Employee : origin(org.example.myapp.entities.Employee)
+     origin: Origin(name=org.example.myapp.entities.Employee,type=RESOURCE)
+
+  Stack trace:
+
+  - org.hibernate.boot.spi.XmlMappingBinderAccess.bind(XmlMappingBinderAccess.java:56)
+  - org.hibernate.boot.MetadataSources.addResource(MetadataSources.java:311)
+  - org.hibernate.boot.cfgxml.spi.MappingReference.apply(MappingReference.java:70)
+  - org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:474)
+  - org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+  - org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+  - org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:746)
+  - org.apache.tapestry5.hibernate.internal.HibernateSessionSourceImpl.<init>(HibernateSessionSourceImpl.java:50)
+  - java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  - java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+  - java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  - java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  - java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  - org.apache.tapestry5.ioc.internal.util.ConstructorInvoker.invoke(ConstructorInvoker.java:50)
+  - org.apache.tapestry5.ioc.internal.util.LoggingInvokableWrapper.invoke(LoggingInvokableWrapper.java:43)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.util.ConstructionPlan.createObject(ConstructionPlan.java:62)
+  - org.apache.tapestry5.ioc.internal.ConstructorServiceCreator.createObject(ConstructorServiceCreator.java:62)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.SingletonServiceLifecycle.createService(SingletonServiceLifecycle.java:30)
+  - org.apache.tapestry5.ioc.internal.LifecycleWrappedServiceCreator.createObject(LifecycleWrappedServiceCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.AdvisorStackBuilder.createObject(AdvisorStackBuilder.java:64)
+  - org.apache.tapestry5.ioc.internal.InterceptorStackBuilder.createObject(InterceptorStackBuilder.java:55)
+  - org.apache.tapestry5.ioc.internal.RecursiveServiceCreationCheckWrapper.createObject(RecursiveServiceCreationCheckWrapper.java:61)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.services.JustInTimeObjectCreator.obtainObjectFromCreator(JustInTimeObjectCreator.java:68)
+  - org.apache.tapestry5.ioc.internal.services.JustInTimeObjectCreator.createObject(JustInTimeObjectCreator.java:56)
+  - $HibernateSessionSource_85a6208c7d.delegate(Unknown Source)
+  - $HibernateSessionSource_85a6208c7d.getSessionFactory(Unknown Source)
+  - org.apache.tapestry5.hibernate.web.modules.HibernateModule.contributeValueEncoderSource(HibernateModule.java:101)
+  - java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+  - java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  - org.apache.tapestry5.ioc.internal.ContributionDefImpl.invokeMethod(ContributionDefImpl.java:133)
+  - org.apache.tapestry5.ioc.internal.ContributionDefImpl.contribute(ContributionDefImpl.java:99)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl$8.run(RegistryImpl.java:715)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.addToMappedConfiguration(RegistryImpl.java:710)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.getMappedConfiguration(RegistryImpl.java:659)
+  - org.apache.tapestry5.ioc.internal.ServiceResourcesImpl$3.invoke(ServiceResourcesImpl.java:141)
+  - org.apache.tapestry5.ioc.internal.ServiceResourcesImpl$3.invoke(ServiceResourcesImpl.java:137)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.ServiceResourcesImpl.getMappedConfiguration(ServiceResourcesImpl.java:135)
+  - org.apache.tapestry5.ioc.internal.AbstractServiceCreator.getMappedConfiguration(AbstractServiceCreator.java:149)
+  - org.apache.tapestry5.ioc.internal.AbstractServiceCreator.access$300(AbstractServiceCreator.java:39)
+  - org.apache.tapestry5.ioc.internal.AbstractServiceCreator$1.findResource(AbstractServiceCreator.java:112)
+  - org.apache.tapestry5.ioc.internal.util.DelegatingInjectionResources.findResource(DelegatingInjectionResources.java:39)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils.calculateInjection(InternalUtils.java:213)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils.access$000(InternalUtils.java:65)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils$4.invoke(InternalUtils.java:273)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils$4.invoke(InternalUtils.java:269)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils.calculateParameters(InternalUtils.java:277)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils$20.invoke(InternalUtils.java:1387)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils$20.invoke(InternalUtils.java:1381)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.util.InternalUtils.createConstructorConstructionPlan(InternalUtils.java:1378)
+  - org.apache.tapestry5.ioc.internal.ConstructorServiceCreator.getPlan(ConstructorServiceCreator.java:52)
+  - org.apache.tapestry5.ioc.internal.ConstructorServiceCreator.createObject(ConstructorServiceCreator.java:62)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.SingletonServiceLifecycle.createService(SingletonServiceLifecycle.java:30)
+  - org.apache.tapestry5.ioc.internal.LifecycleWrappedServiceCreator.createObject(LifecycleWrappedServiceCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.AdvisorStackBuilder.createObject(AdvisorStackBuilder.java:64)
+  - org.apache.tapestry5.ioc.internal.InterceptorStackBuilder.createObject(InterceptorStackBuilder.java:55)
+  - org.apache.tapestry5.ioc.internal.RecursiveServiceCreationCheckWrapper.createObject(RecursiveServiceCreationCheckWrapper.java:61)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.services.JustInTimeObjectCreator.obtainObjectFromCreator(JustInTimeObjectCreator.java:68)
+  - org.apache.tapestry5.ioc.internal.services.JustInTimeObjectCreator.createObject(JustInTimeObjectCreator.java:56)
+  - $ValueEncoderSource_85a6208cb2.delegate(Unknown Source)
+  - $ValueEncoderSource_85a6208cb2.getValueEncoder(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentDefaultProviderImpl.defaultValueEncoder(ComponentDefaultProviderImpl.java:124)
+  - $ComponentDefaultProvider_85a6208cb7.defaultValueEncoder(Unknown Source)
+  - org.apache.tapestry5.corelib.components.Loop.defaultEncoder(Loop.java:302)
+  - org.apache.tapestry5.corelib.components.Loop$Shim_85a6208d36.invoke(Unknown Source)
+  - org.apache.tapestry5.internal.plastic.MethodHandleImpl.invoke(MethodHandleImpl.java:50)
+  - org.apache.tapestry5.internal.transform.ParameterWorker$3$1.invokeDefaultMethod(ParameterWorker.java:430)
+  - org.apache.tapestry5.internal.transform.ParameterWorker$3$1.getDefaultBindingForParameter(ParameterWorker.java:412)
+  - org.apache.tapestry5.internal.transform.ParameterWorker$3$1.load(ParameterWorker.java:336)
+  - org.apache.tapestry5.internal.transform.ParameterWorker$3$1$1.run(ParameterWorker.java:204)
+  - org.apache.tapestry5.internal.structure.PageImpl.invokeCallbacks(PageImpl.java:366)
+  - org.apache.tapestry5.internal.structure.PageImpl.loaded(PageImpl.java:234)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$3.invoke(PageLoaderImpl.java:219)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$3.invoke(PageLoaderImpl.java:204)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl.loadPage(PageLoaderImpl.java:203)
+  - $PageLoader_85a6208cce.loadPage(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageSourceImpl.getPage(PageSourceImpl.java:104)
+  - $PageSource_85a6208ccd.getPage(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestPageCacheImpl.get(RequestPageCacheImpl.java:86)
+  - $RequestPageCache_85a6208ccc.get(Unknown Source)
+  - $RequestPageCache_85a6208cc9.get(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentSourceImpl.getPage(ComponentSourceImpl.java:83)
+  - $ComponentSource_85a6208cb5.getPage(Unknown Source)
+  - org.apache.tapestry5.internal.transform.InjectPageWorker$InjectedPageConduit$1.createObject(InjectPageWorker.java:44)
+  - org.apache.tapestry5.ioc.internal.services.PerthreadManagerImpl$DefaultObjectCreator.createObject(PerthreadManagerImpl.java:274)
+  - org.apache.tapestry5.internal.transform.InjectPageWorker$InjectedPageConduit.get(InjectPageWorker.java:58)
+  - org.example.myapp.pages.Login.conduit_get_employeedetails(Login.java)
+  - org.example.myapp.pages.Login.onSuccess(Login.java:62)
+  - org.example.myapp.pages.Login.dispatchComponentEvent(Login.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:918)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1103)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:58)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1048)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:158)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.internal.structure.InternalComponentResourcesImpl.triggerContextEvent(InternalComponentResourcesImpl.java:289)
+  - org.apache.tapestry5.corelib.components.Form.onAction(Form.java:570)
+  - org.apache.tapestry5.corelib.components.Form.dispatchComponentEvent(Form.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:918)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1103)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:58)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1048)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:158)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.internal.services.ComponentEventRequestHandlerImpl.handle(ComponentEventRequestHandlerImpl.java:79)
+  - org.apache.tapestry5.internal.services.AjaxFilter.handle(AjaxFilter.java:47)
+  - $ComponentEventRequestHandler_85a6208ccb.handle(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$36.handle(TapestryModule.java:2261)
+  - $ComponentEventRequestHandler_85a6208ccb.handle(Unknown Source)
+  - $ComponentEventRequestHandler_85a6208cc3.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:49)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:50)
+  - $ComponentRequestHandler_85a6208cc5.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:41)
+  - $ComponentRequestHandler_85a6208cc5.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:60)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:57)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1304)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:52)
+  - $ComponentRequestHandler_85a6208cc5.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_85a6208c98.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:54)
+  - $Dispatcher_85a6208c9a.dispatch(Unknown Source)
+  - $Dispatcher_85a6208c8e.dispatch(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$RequestHandlerTerminator.service(TapestryHttpModule.java:381)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:31)
+  - $RequestHandler_85a6208c8f.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:986)
+  - $RequestHandler_85a6208c8f.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:976)
+  - $RequestHandler_85a6208c8f.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_85a6208c8f.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:110)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:100)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:124)
+  - $RequestHandler_85a6208c8f.service(Unknown Source)
+  - $RequestHandler_85a6208c84.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$HttpServletRequestHandlerTerminator.service(TapestryHttpModule.java:358)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:69)
+  - $HttpServletRequestFilter_85a6208c83.service(Unknown Source)
+  - $HttpServletRequestHandler_85a6208c86.service(Unknown Source)
+  - org.apache.tapestry5.http.internal.gzip.GZipFilter.service(GZipFilter.java:60)
+  - $HttpServletRequestHandler_85a6208c86.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$2.service(TapestryHttpModule.java:285)
+  - $HttpServletRequestHandler_85a6208c86.service(Unknown Source)
+  - $HttpServletRequestHandler_85a6208c80.service(Unknown Source)
+  - org.apache.tapestry5.http.TapestryFilter.doFilter(TapestryFilter.java:173)
+  - org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  - org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  - org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+  - org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+  - org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+  - org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:165)
+  - org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+  - org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+  - org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+  - org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452)
+  - org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1201)
+  - org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:654)
+  - org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:317)
+  - java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+  - java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+  - org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+  - java.base/java.lang.Thread.run(Thread.java:832)
+
+REQUEST:
+
+Basic Information:
+
+                contextPath: /myApp
+                      flags: requestedSessionIdValid
+                     method: POST
+                       path: /login.form
+                     locale: en_US
+                 serverName: localhost
+                 remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+
+                     accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+            accept-encoding: gzip, deflate, br
+            accept-language: en-US,en;q=0.9
+              cache-control: max-age=0
+                 connection: keep-alive
+             content-length: 548
+               content-type: application/x-www-form-urlencoded
+                     cookie: JSESSIONID=FCCD1860860021683555C6C72A5D68BB
+                       host: localhost:8080
+                     origin: http://localhost:8080
+                    referer: http://localhost:8080/myApp/Login
+                  sec-ch-ua: "Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"
+           sec-ch-ua-mobile: ?0
+         sec-ch-ua-platform: "Windows"
+             sec-fetch-dest: document
+             sec-fetch-mode: navigate
+             sec-fetch-site: same-origin
+             sec-fetch-user: ?1
+  upgrade-insecure-requests: 1
+                 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+
+Parameters:
+                   password: password
+                   submit_0: Submit
+                 t:formdata: kuTI+k4R1Arrk2yo5DCsNJIjdIk=:H4sIAAAAAAAAAJWQsUoEMRRFnwMLCyuKgoW9tlkLt9HGRRCEQYRha8lknmMkk8S8jLM2Vv6EjV8gVvoFW9j5D36AjYWVhcksi4KLYPc4XN493Ps36DQrsJSaUuqdmtBpXiGQg4FxJeOWizNknlsk764GTBiHSuYs54RsmAfIhT+QqIqNDH1tN0eT3uva82cCCyn0hNHeGXUUXnpYTc/5Je8rrst+5p3U5e7YeujOSudrDP+rceyMQKKszitJJI2ePBTbpx93LwnA2H6XWE7UGFcAXcA1QBCZkTmZGOk0y7A45RSf+6i396eeMJU1GrUn1vr433a32fv60+PNfgJJCl2hZEgfFrEvDogKqwDigC1qB5u2n2z9OL8APmass8cBAAA=
+                   t:submit: ["submit_0","submit_0"]
+                   username: admin
+
+SESSION:
+
+  sso:org.apache.tapestry5.alerts.AlertStorage: org.apache.tapestry5.alerts.AlertStorage@42c02ef9
+
+SYSTEM INFORMATION:
+
+Memory:
+    1,230,550,280 bytes free
+    1,342,177,280 bytes total
+    1,342,177,280 bytes max
+
+22 Threads:
+                                     Reference Handler RUNNABLE, daemon, priority 10
+                                             Finalizer WAITING, daemon, priority 8
+                                     Signal Dispatcher RUNNABLE, daemon, priority 9
+                                       Attach Listener RUNNABLE, daemon
+                                   Notification Thread RUNNABLE, daemon, priority 9
+                                                  main WAITING
+                                    Monitor Ctrl-Break RUNNABLE, daemon
+                             Tapestry PeriodicExecutor TIMED_WAITING, daemon
+  ContainerBackgroundProcessor[StandardEngine[Tomcat]] TIMED_WAITING, daemon
+*                                 http-bio-8080-exec-1 RUNNABLE, daemon
+                                  http-bio-8080-exec-2 WAITING, daemon
+                                  http-bio-8080-exec-3 WAITING, daemon
+                                  http-bio-8080-exec-4 WAITING, daemon
+                                  http-bio-8080-exec-5 WAITING, daemon
+                                  http-bio-8080-exec-6 WAITING, daemon
+                                  http-bio-8080-exec-7 WAITING, daemon
+                                  http-bio-8080-exec-8 WAITING, daemon
+                                  http-bio-8080-exec-9 WAITING, daemon
+                                 http-bio-8080-exec-10 WAITING, daemon
+                              http-bio-8080-Acceptor-0 RUNNABLE, daemon
+                            http-bio-8080-AsyncTimeout TIMED_WAITING, daemon
+                                        Common-Cleaner TIMED_WAITING, daemon, priority 8

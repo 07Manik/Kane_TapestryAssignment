@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<head>
+<title>Employee Details</title>
+</head>
+<body>
+<h1>Employee Details</h1>
+<t:grid source="employees" rowsPerPage="10">
+    <!-- Define grid columns -->
+    <p t:type="Property" t:id="name">Name</p>
+    <p t:type="Property" t:id="age">Age</p>
+    <p t:type="Property" t:id="address">Address</p>
+    <p t:type="DirectLink" t:id="viewLink" t:event="activate" t:context="currentRow.employeeId">View Details</p>
+</t:grid>
+</body>
+</html>

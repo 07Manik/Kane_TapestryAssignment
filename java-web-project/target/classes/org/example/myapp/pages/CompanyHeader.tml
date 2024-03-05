@@ -1,0 +1,10 @@
+<!-- src/main/resources/org/example/myapp/components/CompanyHeader.tml -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+    <head>
+        <title>Company Header</title>
+    </head>
+    <body>
+        <h1>${companyName}</h1>
+        <p>${companyAddress}</p>
+    </body>
+</html>

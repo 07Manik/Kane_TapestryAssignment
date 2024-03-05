@@ -1,0 +1,14 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+    <head>
+        <title>My Tapestry App</title>
+    </head>
+    <body>
+        <t:companyHeader/>
+        <div id="content">
+            <t:body/>
+        </div>
+        <div id="footer">
+            <!-- Footer content goes here -->
+        </div>
+    </body>
+</html>

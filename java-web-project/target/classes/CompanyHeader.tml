@@ -1,0 +1,9 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+    <head>
+        <title>Company Header</title>
+    </head>
+    <body>
+        <h1>Company Name</h1>
+        <p>Company Address</p>
+    </body>
+</html>

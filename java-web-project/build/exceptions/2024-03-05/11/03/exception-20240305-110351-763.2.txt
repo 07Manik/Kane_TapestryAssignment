@@ -1,0 +1,214 @@
+EXCEPTION STACK:
+
+
+  Exception: org.apache.tapestry5.runtime.ComponentEventException
+    Message: no transaction is in progress
+    context: org.apache.tapestry5.internal.EmptyEventContext@5a7107eb
+  eventType: action
+   location: classpath:org/example/myapp/pages/EmployeeAdd.tml, line 74
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: no transaction is in progress
+   location: classpath:org/example/myapp/pages/EmployeeAdd.tml, line 74
+      trace: Handling Ajax 'action' component event request for EmployeeAdd:employeeform.
+             Triggering event 'action' on EmployeeAdd:employeeform
+             Triggering event 'success' on EmployeeAdd:employeeform
+
+  Exception: org.apache.tapestry5.runtime.ComponentEventException
+    Message: no transaction is in progress
+    context: org.apache.tapestry5.internal.EmptyEventContext@5a7107eb
+  eventType: success
+   location: classpath:org/example/myapp/pages/EmployeeAdd.tml, line 74
+
+  Exception: javax.persistence.TransactionRequiredException
+    Message: no transaction is in progress
+
+  Stack trace:
+
+  - org.hibernate.internal.AbstractSharedSessionContract.checkTransactionNeededForUpdateOperation(AbstractSharedSessionContract.java:445)
+  - org.hibernate.internal.SessionImpl.checkTransactionNeededForUpdateOperation(SessionImpl.java:3488)
+  - org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1404)
+  - org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1399)
+  - org.springframework.orm.hibernate5.SessionFactoryUtils.flush(SessionFactoryUtils.java:113)
+  - org.springframework.orm.hibernate5.SpringSessionSynchronization.beforeCommit(SpringSessionSynchronization.java:95)
+  - org.springframework.transaction.support.TransactionSynchronizationUtils.triggerBeforeCommit(TransactionSynchronizationUtils.java:97)
+  - org.springframework.transaction.support.AbstractPlatformTransactionManager.triggerBeforeCommit(AbstractPlatformTransactionManager.java:916)
+  - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:727)
+  - org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+  - org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)
+  - org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)
+  - org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+  - org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+  - org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+  - org.example.myapp.services.EmployeeServiceImpl$$EnhancerBySpringCGLIB$$d66b42bc.saveEmployee(<generated>)
+  - org.example.myapp.pages.EmployeeAdd.onSuccess(EmployeeAdd.java:42)
+  - org.example.myapp.pages.EmployeeAdd.dispatchComponentEvent(EmployeeAdd.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:918)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1103)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:58)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1048)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:158)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.internal.structure.InternalComponentResourcesImpl.triggerContextEvent(InternalComponentResourcesImpl.java:289)
+  - org.apache.tapestry5.corelib.components.Form.onAction(Form.java:570)
+  - org.apache.tapestry5.corelib.components.Form.dispatchComponentEvent(Form.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:918)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1103)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:58)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1048)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1298)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:158)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.internal.services.AjaxComponentEventRequestHandler.handle(AjaxComponentEventRequestHandler.java:110)
+  - org.apache.tapestry5.internal.services.ajax.AjaxFormUpdateFilter.handle(AjaxFormUpdateFilter.java:56)
+  - $ComponentEventRequestHandler_fdd9399b7e1c.handle(Unknown Source)
+  - $ComponentEventRequestHandler_fdd9399b7db8.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.AjaxFilter.handle(AjaxFilter.java:47)
+  - $ComponentEventRequestHandler_fdd9399b7db9.handle(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$36.handle(TapestryModule.java:2261)
+  - $ComponentEventRequestHandler_fdd9399b7db9.handle(Unknown Source)
+  - $ComponentEventRequestHandler_fdd9399b7d3f.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:49)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:50)
+  - $ComponentRequestHandler_fdd9399b7d41.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:41)
+  - $ComponentRequestHandler_fdd9399b7d41.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:60)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:57)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1304)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:52)
+  - $ComponentRequestHandler_fdd9399b7d41.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_fdd9399b7d12.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:54)
+  - $Dispatcher_fdd9399b7d14.dispatch(Unknown Source)
+  - $Dispatcher_fdd9399b7d09.dispatch(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$RequestHandlerTerminator.service(TapestryHttpModule.java:381)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:31)
+  - $RequestHandler_fdd9399b7d0a.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:986)
+  - $RequestHandler_fdd9399b7d0a.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:976)
+  - $RequestHandler_fdd9399b7d0a.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_fdd9399b7d0a.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:110)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:100)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:124)
+  - $RequestHandler_fdd9399b7d0a.service(Unknown Source)
+  - $RequestHandler_fdd9399b7cff.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$HttpServletRequestHandlerTerminator.service(TapestryHttpModule.java:358)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:69)
+  - $HttpServletRequestFilter_fdd9399b7cfe.service(Unknown Source)
+  - $HttpServletRequestHandler_fdd9399b7d01.service(Unknown Source)
+  - org.apache.tapestry5.http.internal.gzip.GZipFilter.service(GZipFilter.java:60)
+  - $HttpServletRequestHandler_fdd9399b7d01.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$2.service(TapestryHttpModule.java:285)
+  - $HttpServletRequestHandler_fdd9399b7d01.service(Unknown Source)
+  - $HttpServletRequestHandler_fdd9399b7cfb.service(Unknown Source)
+  - org.apache.tapestry5.http.TapestryFilter.doFilter(TapestryFilter.java:173)
+  - org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  - org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  - org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+  - org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+  - org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+  - org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:165)
+  - org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+  - org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+  - org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+  - org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452)
+  - org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1201)
+  - org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:654)
+  - org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:317)
+  - java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+  - java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+  - org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+  - java.base/java.lang.Thread.run(Thread.java:832)
+
+REQUEST:
+
+Basic Information:
+
+          contextPath: /myApp
+                flags: XHR, requestedSessionIdValid
+               method: POST
+                 path: /employeeadd.employeeform
+               locale: en_GB
+           serverName: localhost
+           remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+
+               accept: text/javascript, text/html, application/xml, text/xml, */*
+      accept-encoding: gzip, deflate, br, zstd
+      accept-language: en-GB,en-US;q=0.9,en;q=0.8
+           connection: keep-alive
+       content-length: 470
+         content-type: application/x-www-form-urlencoded; charset=UTF-8
+               cookie: JSESSIONID=3D9A739BFACBA28A697919435497636F
+                 host: localhost:8080
+               origin: http://localhost:8080
+              referer: http://localhost:8080/myApp/employeeadd
+            sec-ch-ua: "Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"
+     sec-ch-ua-mobile: ?0
+   sec-ch-ua-platform: "Windows"
+       sec-fetch-dest: empty
+       sec-fetch-mode: cors
+       sec-fetch-site: same-origin
+           user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+  x-prototype-version: 1.7.3
+     x-requested-with: XMLHttpRequest
+
+Parameters:
+              address: Haryana
+                  age: 22
+                 name: Navi
+           t:formdata: S7/Ff7WjgGgrj4DDcLpOFT3P6MM=:H4sIAAAAAAAAAFvzloG1XJhBwDW3ICe/MjXVMSXFKi8xN5WhuIjBNL8oXS+xIDE5I1WvJLEgtbikqNJULzm/KDUnM0kvKbE4Vc8xCSiYmFzilpmak6ISnFpSWqAaepj7oejxP0wMjD4M3Mn5eSVF+Tl+QCNLGIR8shLLEvVzEvPS9YNLijLz0q0rCkoYWEAW4nKEI6mOCCjKT04tLg4uTcrNLC7OzM87vC7FJO3bvHNMDAwVBeVCDPzI1iSmA20pZKhjYChhYAZysMmDpFnLxRiEUSRSUoqA1sA1s0MFcKkDGwIAFTfXy24BAAA=
+             t:submit: ["",""]
+             t:zoneid: employeeFormZone
+
+SESSION:
+
+  state:EmployeeDetails:grid:defaultPaginationModel: GridPaginationModelImpl[currentPage=null, sortColumnId=null, sortAscending=null]
+
+SYSTEM INFORMATION:
+
+Memory:
+    1,111,901,928 bytes free
+    1,342,177,280 bytes total
+    1,342,177,280 bytes max
+
+23 Threads:
+                                     Reference Handler RUNNABLE, daemon, priority 10
+                                             Finalizer WAITING, daemon, priority 8
+                                     Signal Dispatcher RUNNABLE, daemon, priority 9
+                                       Attach Listener RUNNABLE, daemon
+                                   Notification Thread RUNNABLE, daemon, priority 9
+                                                  main WAITING
+                                    Monitor Ctrl-Break RUNNABLE, daemon
+                             Tapestry PeriodicExecutor TIMED_WAITING, daemon
+  ContainerBackgroundProcessor[StandardEngine[Tomcat]] TIMED_WAITING, daemon
+                                  http-bio-8080-exec-1 WAITING, daemon
+                                  http-bio-8080-exec-2 WAITING, daemon
+                                  http-bio-8080-exec-3 WAITING, daemon
+                                  http-bio-8080-exec-4 WAITING, daemon
+*                                 http-bio-8080-exec-5 RUNNABLE, daemon
+                                  http-bio-8080-exec-6 WAITING, daemon
+                                  http-bio-8080-exec-7 WAITING, daemon
+                                  http-bio-8080-exec-8 WAITING, daemon
+                                  http-bio-8080-exec-9 WAITING, daemon
+                                 http-bio-8080-exec-10 WAITING, daemon
+                              http-bio-8080-Acceptor-0 RUNNABLE, daemon
+                            http-bio-8080-AsyncTimeout TIMED_WAITING, daemon
+           Hibernate Connection Pool Validation Thread TIMED_WAITING, daemon
+                                        Common-Cleaner TIMED_WAITING, daemon, priority 8
